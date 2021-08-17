@@ -30,6 +30,14 @@ class UserController extends Controller
         return response()->json($user, 200);
     }
 
+    public function destroy($id)
+    {
+        $user = User::where('id', $id)
+        ->delete();
+
+        return response()->json($user);
+    }
+
     public function addPoint($id)
     {
 
