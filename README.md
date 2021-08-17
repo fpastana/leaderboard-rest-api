@@ -21,7 +21,7 @@ php artisan migrate --seed
 ```
 php artisan test
 ```
-## in order to run the app
+## In order to run the app
 ```
 php artisan serve
 ```
