@@ -48,6 +48,7 @@ php artisan serve
     "country":"ca"
 }
 ```
+* [DELETE] http://localhost/api/users/{id}
 * [PATCH] http://localhost/api/users/addPoint/{id}
 * [PATCH] http://localhost/api/users/subPoint/{id}
 
