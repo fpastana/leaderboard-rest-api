@@ -13,13 +13,13 @@ composer update
 php artisan key:generate
 ```
 NOTE: Do not forget to configure the database variables inside your .env file putting the data of your preferred database system
+## In order to install the default users
+```
+php artisan migrate --seed
+```
 ## In order to run the TDD
 ```
 php artisan test
-```
-## In order to install the default users
-```
-php artisan migrate:refresh --seed
 ```
 ## in order to run the app
 ```
