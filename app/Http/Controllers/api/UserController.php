@@ -38,7 +38,7 @@ class UserController extends Controller
             return response()->json($validator->errors(), 412);
         }
 
-        $user = User::create([
+        $user_id = User::insertGetId([
             'name' => $request->name,
             'email' => $request->email,
             'age' => $request->age,
@@ -46,11 +46,23 @@ class UserController extends Controller
             'password' => Hash::make('password'),
         ]);
 
+        $user = User::where('id', $user_id)->first();
+
         return response()->json($user, 200);
     }
 
     public function update(Request $request, $id)
     {
+        $validator = Validator::make($request->all(), [
+            'name' => 'required|max:255',
+            'email' => 'required|unique:App\Models\User,email|max:255',
+            'age' => 'required|integer'
+        ]);
+
+        if($validator->fails()){
+            return response()->json($validator->errors(), 412);
+        }
+
         $user = User::where('id', $id)
         ->update([
             'name' => $request->name,
