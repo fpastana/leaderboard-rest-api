@@ -93,16 +93,16 @@ class UserController extends Controller
             return response()->json($validator->errors(), 412);
         }
 
-        $user = User::where('id', $id)->first();
-
-        $points = $user->points + 1;
+        $points = User::where('id', $id)->first()->points + 1;
 
         $updatedUser = User::where('id', $id)
         ->update([
             'points' => $points
         ]);
 
-        return response()->json($updatedUser, 200);
+        $user = User::where('id', $id)->first();
+
+        return response()->json($user, 200);
     }
 
     public function subPoint(Request $request, $id)
@@ -117,15 +117,15 @@ class UserController extends Controller
             return response()->json($validator->errors(), 412);
         }
 
-        $user = User::where('id', $id)->first();
-
-        $points = $user->points - 1;
+        $points = User::where('id', $id)->first()->points - 1;
 
         $updatedUser = User::where('id', $id)
         ->update([
             'points' => $points
         ]);
 
-        return response()->json($updatedUser, 200);
+        $user = User::where('id', $id)->first();
+
+        return response()->json($user, 200);
     }
 }
