@@ -18,6 +18,13 @@ class UserController extends Controller
         return response()->json($user);
     }
 
+    public function show($id)
+    {
+        $user = User::where('id', $id)->with('addresses')->get();
+
+        return response()->json($user, 200);
+    }
+
     public function store(Request $request)
     {
         $validator = Validator::make($request->all(), [
@@ -40,6 +47,18 @@ class UserController extends Controller
         ]);
 
         return response()->json($user, 200);
+    }
+
+    public function update(Request $request, $id)
+    {
+        $user = User::where('id', $id)
+        ->update([
+            'name' => $request->name,
+            'email' => $request->email,
+            'age' => $request->age,
+        ]);
+
+        return response()->json($user);
     }
 
     public function destroy($id)

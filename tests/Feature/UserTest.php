@@ -49,6 +49,15 @@ class UserTest extends TestCase
     }
 
     /** @test */
+    public function get_a_user_from_the_app()
+    {
+        $user_id = User::orderBy('id', 'desc')->first()->id;
+
+        $response = $this->get('/api/users/' . $user_id);
+        $response->assertStatus(200);
+    }
+
+    /** @test */
     public function a_user_can_receive_a_point()
     {
         $user_id = User::orderBy('id', 'desc')->first()->id;
@@ -86,5 +95,28 @@ class UserTest extends TestCase
 
         $this->assertCount(0, User::where('id', $user_id)->get());
 
+    }
+
+    /** @test */
+    public function a_user_can_be_updated()
+    {
+        $user_id = User::orderBy('id', 'desc')->first()->id;
+
+        $name = Str::random(10);
+        $email = $name.'@gmail.com';
+        $age = 33;
+
+        $response = $this->put('/api/users/'.$user_id, [
+            'name' => $name,
+            'email' => $email,
+            'age' => $age,
+        ]);
+        $response->assertStatus(200);
+
+        $user = User::orderBy('id', 'desc')->first();
+
+        $this->assertEquals($name, $user->name);
+        $this->assertEquals($email, $user->email);
+        $this->assertEquals($age, $user->age);
     }
 }

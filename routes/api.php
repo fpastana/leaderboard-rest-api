@@ -28,7 +28,9 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::group(['prefix' => 'users'], function(){
     Route::get('/', [UserController::class, 'index']);
+    Route::get('/{id}', [UserController::class, 'show']);
     Route::post('/', [UserController::class, 'store']);
+    Route::put('/{id}', [UserController::class, 'update']);
     Route::delete('/{id}', [UserController::class, 'destroy']);
     Route::patch('/addPoint/{id}', [UserController::class, 'addPoint']);
     Route::patch('/subPoint/{id}', [UserController::class, 'subPoint']);
