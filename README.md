@@ -1,25 +1,21 @@
 # About This Project
 
-I created this project to demonstrate how to build an API that we can add new users + addresses using Test Driven Development. For this API you can also add and subtract points from a determined user.  
+I created this project to demonstrate how to build an API that we can add new users + addresses. For this API you can also add and subtract points from a determined user.
 
-It was used Laravel for the development of this application, so to run the app, just copy and paste the file .env.example in the root path of the project. After that, just rename the file into .env. Finally, execute a few command lines, like the samples below: 
+It was used Laravel for the development of this application, so for running the app, just copy and paste the file .env.example in the root path of the project. After that, just rename the file into .env. Finally, execute a few command lines, like the samples below: 
 
-## In order to install vendor folder
+## To install the composer packages:
 ```
-composer update
+composer install
 ```
-## In order to generate Laravel key
+## To generate Laravel key
 ```
 php artisan key:generate
 ```
 NOTE: Do not forget to configure the database variables inside your .env file putting the data of your preferred database system
-## In order to install the default users
+## To install the default users
 ```
 php artisan migrate --seed
-```
-## In order to run the TDD
-```
-php artisan test
 ```
 ## In order to run the app
 ```
@@ -56,4 +52,6 @@ php artisan serve
 
 # Final Considerations
 
-I hope you enjoy this small demonstration of how to build a simple API using Laravel
+I hope you enjoy this small demonstration on how to build a simple API using Laravel
+
+***For tutorials on how to build Open Source Apps, please go to [felipepastana.com](https://felipepastana.com)***
