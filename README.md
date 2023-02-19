@@ -1,6 +1,6 @@
 # About This Project
 
-I created this project to demonstrate how to build an API that we can add new users + addresses. For this API you can also add and subtract points from a determined user.
+I created this project to demonstrate how to build an API to add new users as well as addresses. For this API you can also add and subtract points from a determined user.
 
 It was used Laravel for the development of this application, so for running the app, just copy and paste the file .env.example in the root path of the project. After that, just rename the file into .env. Finally, execute a few command lines, like the samples below: 
 
