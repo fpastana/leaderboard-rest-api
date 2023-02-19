@@ -1,8 +1,8 @@
 # About This Project
 
-I created this project to demonstrate how to build an API to add new users as well as addresses. For this API you can also add and subtract points from a determined user.
+This project was created to demonstrate how to build an API to add new users as well as addresses. It can also increment and decrement points from a determined user.
 
-It was used Laravel for the development of this application, so for running the app, just copy and paste the file .env.example in the root path of the project. After that, just rename the file into .env. Finally, execute a few command lines, like the samples below: 
+It has been using Laravel for the development of this application, so to run the app, just copy and paste the file .env.example in the root path of the project. After that, just rename the file to .env. Finally, execute a few command lines like the examples below: 
 
 ## To install the composer packages:
 ```
@@ -12,7 +12,7 @@ composer install
 ```
 php artisan key:generate
 ```
-NOTE: Do not forget to configure the database variables inside your .env file putting the data of your preferred database system
+NOTE: Do not forget to set up the database variables inside your .env file putting the data of your preferred database system
 ## To install the default users
 ```
 php artisan migrate --seed
