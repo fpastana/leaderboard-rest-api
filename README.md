@@ -17,7 +17,7 @@ NOTE: Do not forget to set up the database variables inside your .env file putti
 ```
 php artisan migrate --seed
 ```
-## In order to run the app
+## To run the app
 ```
 php artisan serve
 ```
